@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     if (scheme) {
       res.json(scheme);
     } else {
-      res.status(404).json({ message: 'Could not find scheme with given id.' })
+      res.status(404).json({ message: 'Cannot find scheme with given id.' })
     }
   })
   .catch(err => {
@@ -38,7 +38,7 @@ router.get('/:id/steps', (req, res) => {
     if (steps.length) {
       res.json(steps);
     } else {
-      res.status(404).json({ message: 'Could not find steps for given scheme' })
+      res.status(404).json({ message: 'Cannot find steps for given scheme' })
     }
   })
   .catch(err => {
@@ -70,7 +70,7 @@ router.post('/:id/steps', (req, res) => {
         res.status(201).json(step);
       })
     } else {
-      res.status(404).json({ message: 'Could not find scheme with given id.' })
+      res.status(404).json({ message: 'Cannot find scheme with given id.' })
     }
   })
   .catch (err => {
@@ -90,7 +90,7 @@ router.put('/:id', (req, res) => {
         res.json(updatedScheme);
       });
     } else {
-      res.status(404).json({ message: 'Could not find scheme with given id' });
+      res.status(404).json({ message: 'Cannot find scheme with given id' });
     }
   })
   .catch (err => {
@@ -106,7 +106,7 @@ router.delete('/:id', (req, res) => {
     if (deleted) {
       res.json({ removed: deleted });
     } else {
-      res.status(404).json({ message: 'Could not find scheme with given id' });
+      res.status(404).json({ message: 'Cannot find scheme with given id' });
     }
   })
   .catch(err => {
